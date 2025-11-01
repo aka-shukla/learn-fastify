@@ -66,14 +66,16 @@ Hooks in Fastify are functions that run at specific points in the request/respon
 ### Lifecycle of a Fastify Request
 
 A typical request goes through these stages:  
-- **onRequest** → right after the HTTP request arrives  
-- **preParsing** → before body parsing  
-- **preValidation** → before schema validation  
-- **preHandler** → before route handler  
-- **handler** → your route logic  
-- **onSend** → before sending the response  
-- **onResponse** → after the response is sent  
-- **onError** → if an error occurs at any stage
+  - **onRequest** → right after the HTTP request arrives  
+  - **preParsing** → before body parsing  
+  - **preValidation** → before schema validation  
+  - **preHandler** → before route handler  
+  - **handler** → your route logic  
+  - **onSend** → before sending the response  
+  - **onResponse** → after the response is sent  
+  - **onError** → if an error occurs at any stage
+
+for more visit: `https://fastify.dev/docs/latest/Reference/Hooks/`
 
 ---
 
@@ -83,21 +85,42 @@ A typical request goes through these stages:
  > As with JavaScript, where everything is an object, with Fastify everything is a plugin.
   to register the route, use register API its only way to add routes,
 
+  visit: `https://fastify.dev/docs/latest/Reference/Plugins/`
+  
   Fastify-decorators:- 
     Decorators let you attach properties or methods to Fastify, request, or reply.
     They are like helpers or utilities that routes and hooks can use without importing anything.
     Helps keep code DRY, modular, and clean.
   
+  visit: `https://fastify.dev/docs/latest/Reference/Decorators/`
+
   registering routes in fastify:-  
     Routes are registered inside plugins using the fastify.register() method.
     You can attach a prefix for route grouping, which is useful for APIs.
 
 ## schema validation
-  Fastify has built-in support for JSON schema validation. (it uses AJV (Another JSON Validator) internally to validate request bodies, query parameters, headers, and response objects.)
-  
+  - Fastify has built-in support for JSON schema validation. (it uses **AJV** (Another JSON Validator) internally to validate request bodies, query parameters, headers, and response objects.)
+  - Fastify has FJS(fluent json schema) helper / utility for writing JSON schema easier, readable, and maintainable and makes life easier(which is similar as zod).
+  - 
+  for more understanding visit: `https://fastify.dev/docs/latest/Reference/Validation-and-Serialization/`
 
 ## handle errors & logging
+  > fastify has built in support for logging (pino) 
+  `https://fastify.dev/docs/latest/Reference/Logging/`
+  what is does? 
+    Logs all incoming requests
+    Logs response times
+    Logs errors automatically
+    Structured JSON format — perfect for production tools like ELK or Datadog
+
+  > Fastify has error handling automatically built-in
+    if a error throws in a route — Fastify catches it and sends a proper response.  
+  
+## Db integration  
+  in express you usually connect db directly like mongoose.connect()
+  
 
 ## migration from express to fastify
  > @express-fastify
+
   

@@ -1,9 +1,13 @@
 import Fastify from "fastify";
 import apiRoutes from "./routes/api.js";
+import mongoConn from "./plugins/db.js";
 
 const app = Fastify({
     logger: true
 });
+
+
+app.register(mongoConn)
 
 app.register(apiRoutes, { prefix: "/api" });
 
