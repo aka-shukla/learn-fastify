@@ -50,7 +50,7 @@ However, for other content types like `multipart/form-data` or `application/x-ww
 > Fastify automatically parses JSON bodies, but `application/x-www-form-urlencoded` requires the `@fastify/formbody` plugin to parse correctly.
 
 
---
+---
 
 ## Fastify does not use `next()`
 
