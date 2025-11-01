@@ -1,6 +1,6 @@
 # Fastify vs Express.js
 
-1. **Release Year:** Fastify came into the market in 2017, while Express has been around since 2010.  
+1. **Release Year:** Fastify launched in 2016, while Express has been around since 2010.  
 2. **Speed / Performance:** Fastify is much faster — up to 4× compared to Express. (Benchmarks shows), using optimized HTTP handling and precompiled JSON serialization.
 3. **Error Handling:** Fastify has built-in async error handling, so route handlers and hooks automatically catch errors. while Express relies on manual error-handling middleware (next(err)), which can be forgotten and lead to uncaught exceptions.
 4. **Logging:** Fastify comes with integrated logging via Pino, which is very fast and structured.
